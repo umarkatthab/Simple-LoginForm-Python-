@@ -4,5 +4,5 @@ This repository contains a simple Login System that shows User Login Date and Ti
 Login Page: User can login by using username and password
 ![R1](uloginpng.png)
 
-Welcome Page:Welcome Page displays the username and User logged-IN date and time  
+Welcome Page: Welcome Page displays the username and User logged-IN date and time  
 ![R1](uwpage.png)
