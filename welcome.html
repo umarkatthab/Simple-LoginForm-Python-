@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #4b0082;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        /* Content Wrapper */
+        .welcome-container {
+            text-align: center;
+            background-color: #3a006e;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            max-width: 400px;
+            width: 90%;
+        }
+
+        /* Header and Messages */
+        .welcome-container h2 {
+            margin: 10px 0;
+            padding: 10px;
+            background-color: #6200ea;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            font-size: 18px;
+        }
+
+        /* Welcome Text */
+        .welcome-container h3 {
+            margin-top: 20px;
+            font-size: 24px;
+            color: #fff;
+        }
+
+        /* Login Time */
+        .welcome-container p {
+            margin-top: 15px;
+            font-size: 16px;
+            background-color: #5e35b1;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="welcome-container">
+        <h3>WELCOME "{{ user_name }}"</h3>
+        {% if login_time %}
+        <p>Your login date and time: {{ login_time }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>

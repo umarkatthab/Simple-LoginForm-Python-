@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        /* Global Styles */
+        body {
+            background-color: #4b0082;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            color: white;
+        }
+
+        /* Form Container */
+        .login-container {
+            background-color: #fff;
+            color: #333;
+            padding: 20px 30px;
+            border-radius: 10px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+
+        /* Header */
+        .login-container h2 {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 20px;
+            margin-bottom: 20px;
+        }
+
+        /* Input Fields */
+        .login-container input[type="text"],
+        .login-container input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 14px;
+        }
+
+        /* Submit Button */
+        .login-container input[type="submit"] {
+            background-color: #4b0082;
+            color: white;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-container input[type="submit"]:hover {
+            background-color: #3a006e;
+        }
+
+        /* Messages */
+        .messages {
+            margin-top: 20px;
+        }
+
+        .messages h3 {
+            color: #ffcccb;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <h2>USER LOGIN</h2>
+        <form action="login" method="post">
+            {% csrf_token %}
+            <input type="text" id="uname" name="uname" placeholder="Enter Username" required>
+            <input type="password" id="upass" name="upass" placeholder="Enter Password" required>
+            <input type="submit" value="Log In">
+        </form>
+        <div class="messages">
+            {% for message in messages %}
+            <h3>{{ message }}</h3>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>
